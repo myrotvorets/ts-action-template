@@ -14,7 +14,7 @@ describe('Test Run', () => {
 
         const action = join(__dirname, '..', 'src', 'main.ts');
 
-        const response = execSync(`npx ts-node "${action}"`, options);
+        const response = execSync(`npx ts-node "${action}"`, options).toString();
         expect(response).toContain('::set-output name=echoedInput::some-input');
     });
 });
