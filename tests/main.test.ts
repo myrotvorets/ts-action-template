@@ -2,6 +2,10 @@ import { ExecSyncOptions, execSync } from 'child_process';
 import { join } from 'path';
 
 describe('Test Run', () => {
+    beforeEach(() => {
+        process.env.GITHUB_OUTPUT = '';
+    });
+
     it('should run successfully', () => {
         const options: ExecSyncOptions = {
             env: {
