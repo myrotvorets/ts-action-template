@@ -35,6 +35,6 @@
   },
   "homepage": "https://github.com/myrotvorets/ts-action-template#readme",
   "engines": {
-    "node": "16"
+    "node": "20"
   }
 }
