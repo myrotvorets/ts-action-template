@@ -1,5 +1,5 @@
-import { ExecSyncOptions, execSync } from 'child_process';
-import { join } from 'path';
+import { type ExecSyncOptions, execSync } from 'node:child_process';
+import { join } from 'node:path';
 
 describe('Test Run', () => {
     beforeEach(() => {
@@ -18,6 +18,7 @@ describe('Test Run', () => {
 
         const action = join(__dirname, '..', 'src', 'main.ts');
 
+        // eslint-disable-next-line sonarjs/os-command -- OK for tests
         const response = execSync(`npx ts-node "${action}"`, options).toString();
         expect(response).toContain('::set-output name=echoedInput::some-input');
     });
